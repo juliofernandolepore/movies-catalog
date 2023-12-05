@@ -1,71 +1,36 @@
-import { useEffect, useState } from "react";
-import jsonApi from "./apiSimulate.json";
+import { Inicio } from "./components/Inicio";
 
-function App() {
-  
-  interface Persona {
-    id: number;
-    nombre: string;
-    apellido: string;
-    nacimiento: string;
-  }
-
-  const [listado, setListado] = useState<Persona[]>([]);
-  
-  useEffect( () => {    
-
-    let gente :Persona[] = [
- 
-      {
-        id: 1,
-      nombre: "fernando",
-      apellido: "lepore",
-      nacimiento: "24-08-1983",
-      },
-      {
-        id: 2,
-        nombre: "flavia",
-        apellido: "lepore",
-        nacimiento: "24-10-1984",
-        },
-        {
-          id: 3,
-          nombre: "cosme",
-          apellido: "fulanito",
-          nacimiento: "1960",
-          }
-
-    ]
-    setListado(gente);
-
-  },[])
-
+export const App = () => {
   return (
-    <>
-      <h1>React con Typescript</h1>
-      <hr />
-      <h2>desplegar listado de personas</h2>
-      <hr />
-      <ul className="list-group text-center">
-        {listado.map(
-          (p):JSX.Element=>(
-          <li 
-          className="list-group-item" key={p.id}>
-          Nombre: {p.nombre} - 
-          Apellido: {p.apellido} - 
-          Fecha de Nacimiento: {p.nacimiento}
-          </li>)
-          )}
-      </ul>
-      <hr />
-      <div className="text-center">
-      {
-        jsonApi.map((p) => <p key={p.id}><strong>{p.nombre} - {p.apellido}</strong></p>)
-      }
+    <div className="contaniner">
+      <div className="row">
+        <div className="col">
+          <h1 className="mt-3">Catalogo de Peliculas</h1>
+        </div>
+        <div className="col text-end">
+          <a href="#!">
+            <span className="badge bg-success">Login</span>
+          </a>
+        </div>
+        <hr className="mb-3"/>
       </div>
-                
-    </>
-  )
-}
-
-export default App
+      <div className="row">
+        <div className="col-md-2">
+            <nav>
+                <div className="list-group">
+                    <a href="#!" className="list-group-item list-group-action text-center">Inicio</a>
+                    <a href="#!" className="list-group-item list-group-action text-center">Peliculas</a>
+                    <a href="#!" className="list-group-item list-group-action text-center">Generos</a>
+                    <a href="#!" className="list-group-item list-group-action text-center bg-danger text-white">Administrador del Catalogo Peliculas</a>
+                    <a href="#!" className="list-group-item list-group-action text-center bg-warning">Agregar Pelicula</a>
+                    <a href="#!" className="list-group-item list-group-action text-center bg-warning">Probando funcionalidad GraphQL</a>
+                </div>
+            </nav>
+        </div>
+        <div className="col-md-10">
+            <Inicio/>
+        </div>  
+      </div>
+    </div>
+  );
+};

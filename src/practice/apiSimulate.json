@@ -1,0 +1,21 @@
+[
+  {
+    "id": 1,
+    "nombre": "nombre",
+    "apellido": "apellido",
+    "nacimiento": "fecha de nacimiento"
+  },
+
+  {
+    "id": 2,
+    "nombre": "nombre",
+    "apellido": "apellido",
+    "nacimiento": "fecha de nacimiento"
+  },
+  {
+    "id": 3,
+    "nombre": "nombre",
+    "apellido": "apellido",
+    "nacimiento": "fecha de nacimiento"
+  }
+]
