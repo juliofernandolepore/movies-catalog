@@ -1,4 +1,4 @@
-import { Inicio } from "./components/Inicio";
+import { Link, Outlet } from "react-router-dom";
 
 export const App = () => {
   return (
@@ -8,28 +8,58 @@ export const App = () => {
           <h1 className="mt-3">Catalogo de Peliculas</h1>
         </div>
         <div className="col text-end">
-          <a href="#!">
+          <Link to="/login">
             <span className="badge bg-success">Login</span>
-          </a>
+          </Link>
         </div>
-        <hr className="mb-3"/>
+        <hr className="mb-3" />
       </div>
       <div className="row">
         <div className="col-md-2">
-            <nav>
-                <div className="list-group">
-                    <a href="#!" className="list-group-item list-group-action text-center">Inicio</a>
-                    <a href="#!" className="list-group-item list-group-action text-center">Peliculas</a>
-                    <a href="#!" className="list-group-item list-group-action text-center">Generos</a>
-                    <a href="#!" className="list-group-item list-group-action text-center bg-danger text-white">Administrador del Catalogo Peliculas</a>
-                    <a href="#!" className="list-group-item list-group-action text-center bg-warning">Agregar Pelicula</a>
-                    <a href="#!" className="list-group-item list-group-action text-center bg-warning">Probando funcionalidad GraphQL</a>
-                </div>
-            </nav>
+          <nav>
+            <div className="list-group">
+              <Link
+                to="/"
+                className="list-group-item list-group-action text-center"
+              >
+                Inicio
+              </Link>
+              <Link
+                to="/peliculas"
+                className="list-group-item list-group-action text-center"
+              >
+                Peliculas
+              </Link>
+              <Link
+                to="/generos"
+                className="list-group-item list-group-action text-center"
+              >
+                Generos
+              </Link>
+              <Link
+                to="/admin"
+                className="list-group-item list-group-action text-center bg-danger text-white"
+              >
+                Administrador del Catalogo Peliculas
+              </Link>
+              <Link
+                to="/agregar/peli/0"
+                className="list-group-item list-group-action text-center bg-warning"
+              >
+                Agregar Pelicula
+              </Link>
+              <Link
+                to="/graphql"
+                className="list-group-item list-group-action text-center bg-warning"
+              >
+                Probando funcionalidad GraphQL
+              </Link>
+            </div>
+          </nav>
         </div>
         <div className="col-md-10">
-            <Inicio/>
-        </div>  
+          <Outlet />
+        </div>
       </div>
     </div>
   );

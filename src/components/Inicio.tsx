@@ -1,4 +1,5 @@
 import imgCine from "./../images/ilustracion.jpg";
+import { Link } from "react-router-dom";
 
 export const Inicio = () => {
   return (
@@ -6,7 +7,7 @@ export const Inicio = () => {
       <div className="text-center">
         <h2>Busca tu pelicula y disfruta</h2>
         <hr />
-        <img src={imgCine} width="500px" alt="entradas para el cine" />
+        <Link to="/peliculas"><img src={imgCine} width="500px" alt="entradas para el cine" /></Link>
       </div>
     </>
   );
